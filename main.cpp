@@ -6,6 +6,11 @@
 #include <iostream>
 #include <QCoreApplication>
 
+/*
+ * Antoine NEBOUT
+ * March 2023
+*/
+
 using namespace std;
 
 int main(int argc, char *argv[])
