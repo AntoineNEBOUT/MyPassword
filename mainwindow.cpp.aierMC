@@ -1,0 +1,313 @@
+#include "mainwindow.h"
+#include "./ui_mainwindow.h"
+#include "chiffrage.h"
+
+#include <QClipboard>
+#include <fstream>
+#include <iostream>
+#include <QList>
+#include <QListIterator>
+#include <QAction>
+
+using namespace std;
+
+MainWindow::MainWindow(QWidget *parent)
+    : QMainWindow(parent)
+    , ui(new Ui::MainWindow)
+{
+    ui->setupUi(this);
+
+    ui->actionDechiffrer->setIcon(QIcon(QCoreApplication::applicationDirPath() + "/icons/cadenasPassword.png"));
+    ui->actionAjouter->setIcon(QIcon(QCoreApplication::applicationDirPath() + "/icons/plusPassword.png"));
+    ui->actionHaut->setIcon(QIcon(QCoreApplication::applicationDirPath() + "/icons/haut.png"));
+    ui->actionBas->setIcon(QIcon(QCoreApplication::applicationDirPath() + "/icons/bas.png"));
+
+    refresh();
+    changeCategory(true, false);
+}
+
+MainWindow::~MainWindow()
+{
+    delete ui;
+}
+
+void MainWindow::refresh()
+{
+    string a = QCoreApplication::applicationDirPath().toStdString() + "/categories.txt";
+    ifstream fileToOpen(a.c_str());
+
+    if(fileToOpen)
+    {
+        string line;
+        int counter = 1;
+
+        while(std::getline(fileToOpen, line)) // Pour récupérer tout le fichier
+        {
+            if(line != "")
+            {
+                content.append(QString::fromStdString(line));
+                if(counter == 1)
+                {
+                    categoriesName.append(QString::fromStdString(line));
+                    ui->categoriesNameComboBox
+                    cout << "Les noms sont : " << line << endl;
+                }
+                else if(counter == 20)
+                    counter = 0;
+                counter++;
+            }
+        }
+        currentCategory = categoriesName[0];
+    }
+
+    /*
+    if(!content.isEmpty())
+    {
+        QListIterator<QString> i(content);
+        while(i.hasNext())
+        {
+            cout << "Les icones sont : " << i.next().toStdString() << endl;
+        }
+    }
+    */
+}
+
+void MainWindow::changeCategory(bool first, bool previous)
+{
+    int index;
+    int currentIndex = categoriesName.indexOf(currentCategory);
+
+    if(previous)
+    {
+        cout << categoriesName.indexOf(currentCategory) << " ET " << categoriesName.length() << endl;
+        index = categoriesName.indexOf(currentCategory)-1;
+    }
+    else if(!first)
+    {
+        if(!(currentIndex+1 >= categoriesName.length()-1))
+        {
+            cout << categoriesName.indexOf(currentCategory) << " ET " << categoriesName.length() << endl;
+            index = categoriesName.indexOf(currentCategory)+1;
+        }
+    }
+
+    if(first)
+        index = 0;
+
+
+    if(!content.isEmpty())
+    {
+        cout << "Change category : " << currentCategory.toStdString() << " => " << categoriesName[index].toStdString() << endl;
+        currentCategory = categoriesName[index];
+
+        QListIterator<QString> i(content);
+        int counter = 0;
+        bool isOk = true;
+        while(i.hasNext() && !isOk)
+        {
+            QString temp = i.next();
+            if(temp == currentCategory)
+                isOk = false;
+            else
+                counter++;
+        }
+
+        ui->categorieName->setText(content[counter]);
+        ui->categorieName->setEnabled(true);
+
+        if(content[counter+2] != "null")
+        {
+            ui->groupBox->setTitle(content[counter+2]);
+            ui->groupBox->setEnabled(true);
+            ui->lineEditUserName->setText(content[counter+3]);
+            ui->lineEditUserName->setEnabled(true);
+            ui->lineEditPassword->setText(content[counter+4]);
+            ui->lineEditPassword->setEnabled(true);
+        }
+        if(content[counter+5] != "null")
+        {
+            ui->groupBox_2->setTitle(content[counter+5]);
+            ui->groupBox_2->setEnabled(true);
+            ui->lineEditUserName_2->setText(content[counter+6]);
+            ui->lineEditUserName_2->setEnabled(true);
+            ui->lineEditPassword_2->setText(content[counter+7]);
+            ui->lineEditPassword_2->setEnabled(true);
+        }
+        if(content[counter+8] != "null")
+        {
+            ui->groupBox_3->setTitle(content[counter+8]);
+            ui->groupBox_3->setEnabled(true);
+            ui->lineEditUserName_3->setText(content[counter+9]);
+            ui->lineEditUserName_3->setEnabled(true);
+            ui->lineEditPassword_3->setText(content[counter+10]);
+            ui->lineEditPassword_3->setEnabled(true);
+        }
+        if(content[counter+11] != "null")
+        {
+            ui->groupBox_4->setTitle(content[counter+11]);
+            ui->groupBox_4->setEnabled(true);
+            ui->lineEditUserName_4->setText(content[counter+12]);
+            ui->lineEditUserName_4->setEnabled(true);
+            ui->lineEditPassword_4->setText(content[counter+13]);
+            ui->lineEditPassword_4->setEnabled(true);
+        }
+        if(content[counter+14] != "null")
+        {
+            ui->groupBox_5->setTitle(content[counter+14]);
+            ui->groupBox_5->setEnabled(true);
+            ui->lineEditUserName_5->setText(content[counter+15]);
+            ui->lineEditUserName_5->setEnabled(true);
+            ui->lineEditPassword_5->setText(content[counter+16]);
+            ui->lineEditPassword_5->setEnabled(true);
+        }
+        if(content[counter+17] != "null")
+        {
+            ui->groupBox_6->setTitle(content[counter+17]);
+            ui->groupBox_6->setEnabled(true);
+            ui->lineEditUserName_6->setText(content[counter+18]);
+            ui->lineEditUserName_6->setEnabled(true);
+            ui->lineEditPassword_6->setText(content[counter+19]);
+            ui->lineEditPassword_6->setEnabled(true);
+        }
+    }
+}
+
+void MainWindow::changeEchoMode(QLineEdit *qLineEdit)
+{
+    if(qLineEdit->echoMode() == QLineEdit::Password)
+        qLineEdit->setEchoMode(QLineEdit::Normal);
+    else
+        qLineEdit->setEchoMode(QLineEdit::Password);
+}
+
+void MainWindow::on_buttonCopyUserName_clicked()
+{
+    c->setText(ui->lineEditUserName->text());
+}
+
+void MainWindow::on_buttonCopyPassword_clicked()
+{
+    c->setText(ui->lineEditPassword->text());
+}
+
+void MainWindow::on_buttonCopyUserName_2_clicked()
+{
+    c->setText(ui->lineEditUserName_2->text());
+}
+
+void MainWindow::on_buttonCopyPassword_2_clicked()
+{
+    c->setText(ui->lineEditPassword_2->text());
+}
+
+void MainWindow::on_buttonCopyUserName_3_clicked()
+{
+    c->setText(ui->lineEditUserName_3->text());
+}
+
+void MainWindow::on_buttonCopyPassword_3_clicked()
+{
+    c->setText(ui->lineEditPassword_3->text());
+}
+
+void MainWindow::on_buttonCopyUserName_4_clicked()
+{
+    c->setText(ui->lineEditUserName_4->text());
+}
+
+void MainWindow::on_buttonCopyPassword_4_clicked()
+{
+    c->setText(ui->lineEditPassword_4->text());
+}
+
+void MainWindow::on_buttonCopyUserName_5_clicked()
+{
+    c->setText(ui->lineEditUserName_5->text());
+}
+
+void MainWindow::on_buttonCopyPassword_5_clicked()
+{
+    c->setText(ui->lineEditPassword_5->text());
+}
+
+void MainWindow::on_buttonCopyUserName_6_clicked()
+{
+    c->setText(ui->lineEditUserName_6->text());
+}
+
+void MainWindow::on_buttonCopyPassword_6_clicked()
+{
+    c->setText(ui->lineEditPassword_6->text());
+}
+
+void MainWindow::on_buttonSeeUserName_clicked()
+{
+    changeEchoMode(ui->lineEditUserName);
+}
+
+void MainWindow::on_buttonSeePassword_clicked()
+{
+    changeEchoMode(ui->lineEditPassword);
+}
+
+void MainWindow::on_buttonSeeUserName_2_clicked()
+{
+    changeEchoMode(ui->lineEditUserName_2);
+}
+
+void MainWindow::on_buttonSeePassword_2_clicked()
+{
+    changeEchoMode(ui->lineEditPassword_2);
+}
+
+void MainWindow::on_buttonSeeUserName_3_clicked()
+{
+    changeEchoMode(ui->lineEditUserName_3);
+}
+
+void MainWindow::on_buttonSeePassword_3_clicked()
+{
+    changeEchoMode(ui->lineEditPassword_3);
+}
+
+void MainWindow::on_buttonSeeUserName_4_clicked()
+{
+    changeEchoMode(ui->lineEditUserName_4);
+}
+
+void MainWindow::on_buttonSeePassword_4_clicked()
+{
+    changeEchoMode(ui->lineEditPassword_4);
+}
+
+void MainWindow::on_buttonSeeUserName_5_clicked()
+{
+    changeEchoMode(ui->lineEditUserName_5);
+}
+
+void MainWindow::on_buttonSeePassword_5_clicked()
+{
+    changeEchoMode(ui->lineEditPassword_5);
+}
+
+void MainWindow::on_buttonSeeUserName_6_clicked()
+{
+    changeEchoMode(ui->lineEditUserName_6);
+}
+
+void MainWindow::on_buttonSeePassword_6_clicked()
+{
+    changeEchoMode(ui->lineEditPassword_6);
+}
+
+void MainWindow::on_actionHaut_triggered()
+{
+    changeCategory(false, false);
+}
+
+
+void MainWindow::on_actionBas_triggered()
+{
+    changeCategory(false, true);
+}
+

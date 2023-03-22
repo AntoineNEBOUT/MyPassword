@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AddRemoveForm</class>
+ <widget class="QWidget" name="AddRemoveForm">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>516</width>
+    <height>367</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>516</width>
+    <height>367</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>516</width>
+    <height>367</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QGroupBox" name="addGroupBox">
+     <property name="title">
+      <string>Add</string>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QGroupBox" name="categoryAddGroupBox">
+        <property name="title">
+         <string>Category</string>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+        <layout class="QGridLayout" name="gridLayout">
+         <item row="0" column="0">
+          <widget class="QLineEdit" name="categoryNameAddLineEdit">
+           <property name="inputMask">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="placeholderText">
+            <string>Name</string>
+           </property>
+           <property name="clearButtonEnabled">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QPushButton" name="iconCategoryAddPushButton">
+           <property name="text">
+            <string>Icon</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="2">
+          <widget class="QComboBox" name="previewCategoryAddComboBox"/>
+         </item>
+         <item row="2" column="0">
+          <widget class="QPushButton" name="validateCategoryAddPushButton">
+           <property name="text">
+            <string>Validate</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="accountAddGroupBox">
+        <property name="title">
+         <string>Account</string>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_2">
+         <item row="0" column="0">
+          <widget class="QLineEdit" name="accountNameAddLineEdit">
+           <property name="placeholderText">
+            <string>Account name</string>
+           </property>
+           <property name="clearButtonEnabled">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLineEdit" name="accountUserNameAddLineEdit">
+           <property name="placeholderText">
+            <string>Username</string>
+           </property>
+           <property name="clearButtonEnabled">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="accountPasswordAddLineEdit">
+           <property name="placeholderText">
+            <string>Password</string>
+           </property>
+           <property name="clearButtonEnabled">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QPushButton" name="validateAccountAddPushButton">
+           <property name="text">
+            <string>Validate</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>(In the current category)</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QPushButton" name="generatePasswordPushButton">
+           <property name="text">
+            <string>Generate Password</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="removeGroupBox">
+     <property name="title">
+      <string>Remove</string>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <property name="checked">
+      <bool>false</bool>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QGroupBox" name="categoryRemoveGroupBox">
+        <property name="title">
+         <string>Category</string>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_3">
+         <item row="0" column="1">
+          <spacer name="horizontalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>59</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="0" column="0">
+          <widget class="QComboBox" name="selectCategoryRemoveComboBox">
+           <property name="minimumSize">
+            <size>
+             <width>150</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="placeholderText">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <spacer name="horizontalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="3" column="0">
+          <widget class="QPushButton" name="validateCategoryRemovePushButton">
+           <property name="minimumSize">
+            <size>
+             <width>90</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>120</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Validate</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QCheckBox" name="sureCategoryRemoveCheckBox">
+           <property name="text">
+            <string>Are you sure ?</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="accountRemoveGroupBox">
+        <property name="title">
+         <string>Account</string>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_4">
+         <item row="0" column="0">
+          <widget class="QComboBox" name="selectAccountRemoveComboBox">
+           <property name="minimumSize">
+            <size>
+             <width>150</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="placeholderText">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <spacer name="horizontalSpacer_4">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>59</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="2" column="0">
+          <widget class="QPushButton" name="validateAccountRemovePushButton">
+           <property name="minimumSize">
+            <size>
+             <width>90</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>120</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Validate</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <spacer name="horizontalSpacer_5">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>59</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="1" column="0">
+          <widget class="QCheckBox" name="sureAccountRemoveCheckBox">
+           <property name="text">
+            <string>Are you sure ?</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
