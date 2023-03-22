@@ -352,6 +352,7 @@ void MainWindow::on_action_propos_de_Qt_triggered()
 
 void MainWindow::on_action_propos_triggered()
 {
-    QMessageBox::about(this, "About", "This software was developed by Antoine NEBOUT with the open-source version of Qt 6.4.2.\nIt is an encrypted password manager.\nThis project is available on GitHub : ");
+    QMessageBox::about(this, "About", "<p>This software was developed by Antoine NEBOUT with the open-source version of Qt 6.4.2.<br>It is an encrypted password manager."
+                            "<br>This project is available on <a href=https://github.com/AntoineNEBOUT/MyPassword>GitHub</a><p>");
 }
 
