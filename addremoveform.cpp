@@ -121,11 +121,10 @@ void AddRemoveForm::on_validateCategoryRemovePushButton_clicked()
     {
         monFlux << text;
     }
-
+    QMessageBox::information(this, "Succès", "The category '" + ui->selectCategoryRemoveComboBox->currentText() + "' has been removed.");
     ui->sureCategoryRemoveCheckBox->setChecked(false);
     ui->validateCategoryRemovePushButton->setEnabled(false);
     ui->selectCategoryRemoveComboBox->removeItem(ui->selectCategoryRemoveComboBox->currentIndex());
-    QMessageBox::information(this, "Succès", "The category '" + ui->selectCategoryRemoveComboBox->currentText() + "' has been removed.");
 }
 
 
@@ -180,11 +179,10 @@ void AddRemoveForm::on_validateAccountRemovePushButton_clicked()
     {
         monFlux << text;
     }
-
+    QMessageBox::information(this, "Succès", "The account '" + ui->selectAccountRemoveComboBox->currentText() + "' has been removed.");
     ui->sureAccountRemoveCheckBox->setChecked(false);
     ui->validateAccountRemovePushButton->setEnabled(false);
     ui->selectAccountRemoveComboBox->removeItem(ui->selectAccountRemoveComboBox->currentIndex());
-    QMessageBox::information(this, "Succès", "The account '" + ui->selectAccountRemoveComboBox->currentText() + "' has been removed.");
 }
 
 
@@ -227,8 +225,8 @@ void AddRemoveForm::on_validateCategoryAddPushButton_clicked()
             monFlux << nullEncrypted + "\n";
         }
     }
-    ui->categoryNameAddLineEdit->clear();
     QMessageBox::information(this, "Succès", "The category '" + ui->categoryNameAddLineEdit->text() + "' has been added.");
+    ui->categoryNameAddLineEdit->clear();
 }
 
 
@@ -278,10 +276,10 @@ void AddRemoveForm::on_validateAccountAddPushButton_clicked()
     {
         monFlux << text;
     }
+    QMessageBox::information(this, "Succès", "The account '" + ui->accountNameAddLineEdit->text() + "' has been added.");
     ui->accountNameAddLineEdit->clear();
     ui->accountUserNameAddLineEdit->clear();
     ui->accountPasswordAddLineEdit->clear();
-    QMessageBox::information(this, "Succès", "The account '" + ui->accountNameAddLineEdit->text() + "' has been added.");
 }
 
 
