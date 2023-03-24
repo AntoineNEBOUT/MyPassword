@@ -29,7 +29,7 @@ AddRemoveForm::AddRemoveForm(QList<QString> categoriesNames, QList<QString> grou
 
     ui->label->setText("In '"+m_currentCategory+"'");
 
-    QString key2 = "1234";
+    QString key2 = key;
     dTwo = new Chiffrage(key2);
 
     nullEncrypted = dTwo->Encrypt("null").toStdString();
