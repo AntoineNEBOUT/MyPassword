@@ -161,7 +161,7 @@ void AddRemoveForm::on_validateAccountRemovePushButton_clicked()
                 text += nullEncrypted + "\n";
             }
             else if(line != nullEncrypted)
-                text += dTwo->Encrypt(QString::fromStdString(line)).toStdString() + "\n";
+                text += line + "\n";
             else
                 text += line;
 

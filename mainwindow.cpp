@@ -29,7 +29,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->action_propos_de_Qt->setIcon(QIcon(QCoreApplication::applicationDirPath() + "/icons/qt.png"));
 
     y = new KeyDialog();
-    y->setWindowFlags(Qt::WindowStaysOnTopHint);
     y->setWindowIcon(QIcon(QCoreApplication::applicationDirPath() + "/icons/MyPasswordIcon"));
 
     QFileInfo checkFile(QCoreApplication::applicationDirPath() + "/mdp");
@@ -44,6 +43,7 @@ MainWindow::MainWindow(QWidget *parent)
         connect(y, 	SIGNAL(accepted()), SLOT(setKey()));
     }
 
+    y->setWindowFlags(Qt::WindowStaysOnTopHint);
     y->show();
 
     connect(y, 	SIGNAL(rejected()), SLOT(cancelKey()));
