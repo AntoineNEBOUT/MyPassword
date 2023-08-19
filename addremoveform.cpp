@@ -7,6 +7,7 @@
 #include <QMessageBox>
 #include <fstream>
 #include <iostream>
+#include <QFileDialog>
 
 using namespace std;
 
@@ -217,7 +218,7 @@ void AddRemoveForm::on_validateCategoryAddPushButton_clicked()
 
     if(monFlux)
     {
-        monFlux << text + dTwo->Encrypt(ui->categoryNameAddLineEdit->text()).toStdString() + "\nIcon" + dTwo->Encrypt(ui->categoryNameAddLineEdit->text()).toStdString() + "\n";
+        monFlux << text + dTwo->Encrypt(ui->categoryNameAddLineEdit->text()).toStdString() + "\n" + dTwo->Encrypt(categoryIconFilePath).toStdString() + "\n";
 
         int i;
         for(i = 0 ; i < 18 ; i++)
@@ -285,6 +286,14 @@ void AddRemoveForm::on_validateAccountAddPushButton_clicked()
 
 void AddRemoveForm::on_generatePasswordPushButton_clicked()
 {
-    ui->accountPasswordAddLineEdit->setText(dTwo->GeneratePassword(8));
+    ui->accountPasswordAddLineEdit->setText(dTwo->GeneratePassword(16));
+}
+
+
+void AddRemoveForm::on_iconCategoryAddPushButton_clicked()
+{
+    categoryIconFilePath = QFileDialog::getOpenFileName(this, "Choose icon", "C:", "Images (*.png ; *.jpg ; *.jpeg ; *.ico)");
+    ui->previewCategoryAddComboBox->clear();
+    ui->previewCategoryAddComboBox->addItem(QIcon(categoryIconFilePath), ui->categoryNameAddLineEdit->text());
 }
 

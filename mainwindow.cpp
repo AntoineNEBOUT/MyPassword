@@ -109,13 +109,30 @@ void MainWindow::refresh()
                     if(line != "")
                     {
                         categoriesName.append(d->Decrypt(QString::fromStdString(line)));
-                        ui->categoriesNameComboBox->addItem(d->Decrypt(QString::fromStdString(line)));
+                        //ui->categoriesNameComboBox->addItem(d->Decrypt(QString::fromStdString(line)));
                         isThereACategory = true;
                     }
+                }
+                else if(counter == 2)
+                {
+                    categoriesIcon.append(d->Decrypt(QString::fromStdString(line)));
                 }
                 else if(counter == 20)
                     counter = 0;
                 counter++;
+            }
+        }
+
+        int i;
+        for(i = 0 ; i < categoriesName.length() ; i++)
+        {
+            if(categoriesIcon[i] != "Icon")
+            {
+                ui->categoriesNameComboBox->addItem(QIcon(categoriesIcon[i]), categoriesName[i]);
+            }
+            else
+            {
+                ui->categoriesNameComboBox->addItem(categoriesName[i]);
             }
         }
 
@@ -183,6 +200,17 @@ void MainWindow::changeCategory()
         }
 
         ui->categorieName->setText(currentCategory);
+
+        if(!(categoriesIcon[categoriesName.indexOf(currentCategory)] == "Icon"))
+        {
+            ui->categoryImageLabel->setVisible(true);
+            ui->categoryImageLabel->setPixmap(QPixmap(categoriesIcon[categoriesName.indexOf(currentCategory)]).scaled(32, 32));
+            ui->categoryImageLabel->setFixedSize(32, 32);
+        }
+        else
+        {
+            ui->categoryImageLabel->setVisible(false);
+        }
         ui->categorieName->setEnabled(true);
         prepareGroupBox(2, 3, 4, *ui->groupBox, *ui->lineEditUserName, *ui->lineEditPassword);
         prepareGroupBox(5, 6, 7, *ui->groupBox_2, *ui->lineEditUserName_2, *ui->lineEditPassword_2);

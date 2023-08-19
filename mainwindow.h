@@ -98,6 +98,7 @@ private:
     QList<QString> content;
     QList<QString> contentToFill;
     QList<QString> categoriesName;
+    QList<QString> categoriesIcon;
     QList<QString> groupBoxNames;
     QString currentCategory;
     QString key;

@@ -49,12 +49,15 @@ private slots:
 
     void on_generatePasswordPushButton_clicked();
 
+    void on_iconCategoryAddPushButton_clicked();
+
 private:
     Ui::AddRemoveForm *ui;
     string path = QCoreApplication::applicationDirPath().toStdString() + "/categories.txt";
     QString m_currentCategory;
     Chiffrage *dTwo;
     string nullEncrypted;
+    QString categoryIconFilePath = "Icon";
 };
 
 #endif // ADDREMOVEFORM_H
