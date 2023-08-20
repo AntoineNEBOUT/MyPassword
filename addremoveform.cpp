@@ -214,11 +214,13 @@ void AddRemoveForm::on_validateCategoryAddPushButton_clicked()
         }
     }
 
+    QFile::copy(categoryIconFilePath, QCoreApplication::applicationDirPath() + "/CategoriesIcons/" + QFileInfo(categoryIconFilePath).fileName());
+
     ofstream monFlux(path.c_str());
 
     if(monFlux)
     {
-        monFlux << text + dTwo->Encrypt(ui->categoryNameAddLineEdit->text()).toStdString() + "\n" + dTwo->Encrypt(categoryIconFilePath).toStdString() + "\n";
+        monFlux << text + dTwo->Encrypt(ui->categoryNameAddLineEdit->text()).toStdString() + "\n" + dTwo->Encrypt(QFileInfo(categoryIconFilePath).fileName()).toStdString() + "\n";
 
         int i;
         for(i = 0 ; i < 18 ; i++)
@@ -293,6 +295,7 @@ void AddRemoveForm::on_generatePasswordPushButton_clicked()
 void AddRemoveForm::on_iconCategoryAddPushButton_clicked()
 {
     categoryIconFilePath = QFileDialog::getOpenFileName(this, "Choose icon", "C:", "Images (*.png ; *.jpg ; *.jpeg ; *.ico)");
+    cout << QFileInfo(categoryIconFilePath).fileName().toStdString() << endl;
     ui->previewCategoryAddComboBox->clear();
     ui->previewCategoryAddComboBox->addItem(QIcon(categoryIconFilePath), ui->categoryNameAddLineEdit->text());
 }

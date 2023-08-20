@@ -22,14 +22,16 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    this->setWindowIcon(QIcon(QCoreApplication::applicationDirPath() + "/icons/MyPasswordIcon"));
-    ui->actionAjouter->setIcon(QIcon(QCoreApplication::applicationDirPath() + "/icons/editIcon.png"));
-    ui->actionRestart->setIcon(QIcon(QCoreApplication::applicationDirPath() + "/icons/restartIcon.png"));
-    ui->action_propos->setIcon(QIcon(QCoreApplication::applicationDirPath() + "/icons/MyPasswordIcon.png"));
-    ui->action_propos_de_Qt->setIcon(QIcon(QCoreApplication::applicationDirPath() + "/icons/qt.png"));
+    this->setWindowIcon(QIcon(QCoreApplication::applicationDirPath() + "/Icons/MyPasswordIcon"));
+    ui->actionAjouter->setIcon(QIcon(QCoreApplication::applicationDirPath() + "/Icons/editIcon.png"));
+    ui->actionRestart->setIcon(QIcon(QCoreApplication::applicationDirPath() + "/Icons/restartIcon.png"));
+    ui->action_propos->setIcon(QIcon(QCoreApplication::applicationDirPath() + "/Icons/MyPasswordIcon.png"));
+    ui->action_propos_de_Qt->setIcon(QIcon(QCoreApplication::applicationDirPath() + "/Icons/qt.png"));
+
+    ui->categoryImageLabel->setVisible(false);
 
     y = new KeyDialog();
-    y->setWindowIcon(QIcon(QCoreApplication::applicationDirPath() + "/icons/MyPasswordIcon"));
+    y->setWindowIcon(QIcon(QCoreApplication::applicationDirPath() + "/Icons/MyPasswordIcon"));
 
     QFileInfo checkFile(QCoreApplication::applicationDirPath() + "/mdp");
     if(checkFile.exists() && checkFile.isFile())
@@ -128,7 +130,7 @@ void MainWindow::refresh()
         {
             if(categoriesIcon[i] != "Icon")
             {
-                ui->categoriesNameComboBox->addItem(QIcon(categoriesIcon[i]), categoriesName[i]);
+                ui->categoriesNameComboBox->addItem(QIcon(QCoreApplication::applicationDirPath() + "/CategoriesIcons/" + categoriesIcon[i]), categoriesName[i]);
             }
             else
             {
@@ -204,7 +206,7 @@ void MainWindow::changeCategory()
         if(!(categoriesIcon[categoriesName.indexOf(currentCategory)] == "Icon"))
         {
             ui->categoryImageLabel->setVisible(true);
-            ui->categoryImageLabel->setPixmap(QPixmap(categoriesIcon[categoriesName.indexOf(currentCategory)]).scaled(32, 32));
+            ui->categoryImageLabel->setPixmap(QPixmap(QCoreApplication::applicationDirPath() + "/CategoriesIcons/" + categoriesIcon[categoriesName.indexOf(currentCategory)]).scaled(32, 32));
             ui->categoryImageLabel->setFixedSize(32, 32);
         }
         else
