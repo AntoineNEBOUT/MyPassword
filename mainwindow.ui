@@ -48,7 +48,7 @@
        </size>
       </property>
       <property name="title">
-       <string>Vide</string>
+       <string>Empty</string>
       </property>
       <layout class="QGridLayout" name="gridLayout">
        <item row="1" column="0">
@@ -67,14 +67,14 @@
        <item row="0" column="0">
         <widget class="QLabel" name="labelUserName">
          <property name="text">
-          <string>Nom d'utilisateur :</string>
+          <string>Username :</string>
          </property>
         </widget>
        </item>
        <item row="2" column="0">
         <widget class="QLabel" name="labelPassword">
          <property name="text">
-          <string>Mot de passe :</string>
+          <string>Password :</string>
          </property>
         </widget>
        </item>
@@ -91,28 +91,28 @@
        <item row="1" column="1">
         <widget class="QPushButton" name="buttonCopyUserName">
          <property name="text">
-          <string>Copier</string>
+          <string>Copy</string>
          </property>
         </widget>
        </item>
        <item row="3" column="2">
         <widget class="QPushButton" name="buttonSeePassword">
          <property name="text">
-          <string>Voir</string>
+          <string>See</string>
          </property>
         </widget>
        </item>
        <item row="3" column="1">
         <widget class="QPushButton" name="buttonCopyPassword">
          <property name="text">
-          <string>Copier</string>
+          <string>Copy</string>
          </property>
         </widget>
        </item>
        <item row="1" column="2">
         <widget class="QPushButton" name="buttonSeeUserName">
          <property name="text">
-          <string>Voir</string>
+          <string>See</string>
          </property>
         </widget>
        </item>
@@ -137,7 +137,7 @@
        </size>
       </property>
       <property name="title">
-       <string>Vide</string>
+       <string>Empty</string>
       </property>
       <layout class="QGridLayout" name="gridLayout_4">
        <item row="1" column="0">
@@ -153,14 +153,14 @@
        <item row="0" column="0">
         <widget class="QLabel" name="labelUserName_4">
          <property name="text">
-          <string>Nom d'utilisateur :</string>
+          <string>Username :</string>
          </property>
         </widget>
        </item>
        <item row="2" column="0">
         <widget class="QLabel" name="labelPassword_4">
          <property name="text">
-          <string>Mot de passe :</string>
+          <string>Password :</string>
          </property>
         </widget>
        </item>
@@ -177,28 +177,28 @@
        <item row="1" column="1">
         <widget class="QPushButton" name="buttonCopyUserName_4">
          <property name="text">
-          <string>Copier</string>
+          <string>Copy</string>
          </property>
         </widget>
        </item>
        <item row="3" column="2">
         <widget class="QPushButton" name="buttonSeePassword_4">
          <property name="text">
-          <string>Voir</string>
+          <string>See</string>
          </property>
         </widget>
        </item>
        <item row="3" column="1">
         <widget class="QPushButton" name="buttonCopyPassword_4">
          <property name="text">
-          <string>Copier</string>
+          <string>Copy</string>
          </property>
         </widget>
        </item>
        <item row="1" column="2">
         <widget class="QPushButton" name="buttonSeeUserName_4">
          <property name="text">
-          <string>Voir</string>
+          <string>See</string>
          </property>
         </widget>
        </item>
@@ -223,7 +223,7 @@
        </size>
       </property>
       <property name="title">
-       <string>Vide</string>
+       <string>Empty</string>
       </property>
       <layout class="QGridLayout" name="gridLayout_5">
        <item row="1" column="0">
@@ -239,14 +239,14 @@
        <item row="0" column="0">
         <widget class="QLabel" name="labelUserName_5">
          <property name="text">
-          <string>Nom d'utilisateur :</string>
+          <string>Username :</string>
          </property>
         </widget>
        </item>
        <item row="2" column="0">
         <widget class="QLabel" name="labelPassword_5">
          <property name="text">
-          <string>Mot de passe :</string>
+          <string>Password :</string>
          </property>
         </widget>
        </item>
@@ -263,28 +263,28 @@
        <item row="1" column="1">
         <widget class="QPushButton" name="buttonCopyUserName_5">
          <property name="text">
-          <string>Copier</string>
+          <string>Copy</string>
          </property>
         </widget>
        </item>
        <item row="3" column="2">
         <widget class="QPushButton" name="buttonSeePassword_5">
          <property name="text">
-          <string>Voir</string>
+          <string>See</string>
          </property>
         </widget>
        </item>
        <item row="3" column="1">
         <widget class="QPushButton" name="buttonCopyPassword_5">
          <property name="text">
-          <string>Copier</string>
+          <string>Copy</string>
          </property>
         </widget>
        </item>
        <item row="1" column="2">
         <widget class="QPushButton" name="buttonSeeUserName_5">
          <property name="text">
-          <string>Voir</string>
+          <string>See</string>
          </property>
         </widget>
        </item>
@@ -309,7 +309,7 @@
        </size>
       </property>
       <property name="title">
-       <string>Vide</string>
+       <string>Empty</string>
       </property>
       <layout class="QGridLayout" name="gridLayout_3">
        <item row="1" column="0">
@@ -325,14 +325,14 @@
        <item row="0" column="0">
         <widget class="QLabel" name="labelUserName_3">
          <property name="text">
-          <string>Nom d'utilisateur :</string>
+          <string>Username :</string>
          </property>
         </widget>
        </item>
        <item row="2" column="0">
         <widget class="QLabel" name="labelPassword_3">
          <property name="text">
-          <string>Mot de passe :</string>
+          <string>Password :</string>
          </property>
         </widget>
        </item>
@@ -349,28 +349,28 @@
        <item row="1" column="1">
         <widget class="QPushButton" name="buttonCopyUserName_3">
          <property name="text">
-          <string>Copier</string>
+          <string>Copy</string>
          </property>
         </widget>
        </item>
        <item row="3" column="2">
         <widget class="QPushButton" name="buttonSeePassword_3">
          <property name="text">
-          <string>Voir</string>
+          <string>See</string>
          </property>
         </widget>
        </item>
        <item row="3" column="1">
         <widget class="QPushButton" name="buttonCopyPassword_3">
          <property name="text">
-          <string>Copier</string>
+          <string>Copy</string>
          </property>
         </widget>
        </item>
        <item row="1" column="2">
         <widget class="QPushButton" name="buttonSeeUserName_3">
          <property name="text">
-          <string>Voir</string>
+          <string>See</string>
          </property>
         </widget>
        </item>
@@ -395,7 +395,7 @@
        </size>
       </property>
       <property name="title">
-       <string>Vide</string>
+       <string>Empty</string>
       </property>
       <layout class="QGridLayout" name="gridLayout_2">
        <item row="1" column="0">
@@ -411,14 +411,14 @@
        <item row="0" column="0">
         <widget class="QLabel" name="labelUserName_2">
          <property name="text">
-          <string>Nom d'utilisateur :</string>
+          <string>Username :</string>
          </property>
         </widget>
        </item>
        <item row="2" column="0">
         <widget class="QLabel" name="labelPassword_2">
          <property name="text">
-          <string>Mot de passe :</string>
+          <string>Password :</string>
          </property>
         </widget>
        </item>
@@ -435,28 +435,28 @@
        <item row="1" column="1">
         <widget class="QPushButton" name="buttonCopyUserName_2">
          <property name="text">
-          <string>Copier</string>
+          <string>Copy</string>
          </property>
         </widget>
        </item>
        <item row="3" column="2">
         <widget class="QPushButton" name="buttonSeePassword_2">
          <property name="text">
-          <string>Voir</string>
+          <string>See</string>
          </property>
         </widget>
        </item>
        <item row="3" column="1">
         <widget class="QPushButton" name="buttonCopyPassword_2">
          <property name="text">
-          <string>Copier</string>
+          <string>Copy</string>
          </property>
         </widget>
        </item>
        <item row="1" column="2">
         <widget class="QPushButton" name="buttonSeeUserName_2">
          <property name="text">
-          <string>Voir</string>
+          <string>See</string>
          </property>
         </widget>
        </item>
@@ -481,7 +481,7 @@
        </size>
       </property>
       <property name="title">
-       <string>Vide</string>
+       <string>Empty</string>
       </property>
       <layout class="QGridLayout" name="gridLayout_6">
        <item row="1" column="0">
@@ -497,14 +497,14 @@
        <item row="0" column="0">
         <widget class="QLabel" name="labelUserName_6">
          <property name="text">
-          <string>Nom d'utilisateur :</string>
+          <string>Username :</string>
          </property>
         </widget>
        </item>
        <item row="2" column="0">
         <widget class="QLabel" name="labelPassword_6">
          <property name="text">
-          <string>Mot de passe :</string>
+          <string>Password :</string>
          </property>
         </widget>
        </item>
@@ -521,28 +521,28 @@
        <item row="1" column="1">
         <widget class="QPushButton" name="buttonCopyUserName_6">
          <property name="text">
-          <string>Copier</string>
+          <string>Copy</string>
          </property>
         </widget>
        </item>
        <item row="3" column="2">
         <widget class="QPushButton" name="buttonSeePassword_6">
          <property name="text">
-          <string>Voir</string>
+          <string>See</string>
          </property>
         </widget>
        </item>
        <item row="3" column="1">
         <widget class="QPushButton" name="buttonCopyPassword_6">
          <property name="text">
-          <string>Copier</string>
+          <string>Copy</string>
          </property>
         </widget>
        </item>
        <item row="1" column="2">
         <widget class="QPushButton" name="buttonSeeUserName_6">
          <property name="text">
-          <string>Voir</string>
+          <string>See</string>
          </property>
         </widget>
        </item>
@@ -575,7 +575,7 @@
          </font>
         </property>
         <property name="text">
-         <string>Catégorie</string>
+         <string>Category</string>
         </property>
        </widget>
       </item>
@@ -629,7 +629,7 @@
     <string>Ajouter / Supprimer</string>
    </property>
    <property name="toolTip">
-    <string>Ajouter un nouveau mot de passe et un nom d'utilisateur</string>
+    <string>Add a new password and user name</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+N</string>
