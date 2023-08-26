@@ -295,6 +295,9 @@ void AddRemoveForm::on_generatePasswordPushButton_clicked()
 void AddRemoveForm::on_iconCategoryAddPushButton_clicked()
 {
     categoryIconFilePath = QFileDialog::getOpenFileName(this, "Choose icon", "C:", "Images (*.png ; *.jpg ; *.jpeg ; *.ico)");
+    if(categoryIconFilePath == "")
+        categoryIconFilePath = "Icon";
+
     cout << QFileInfo(categoryIconFilePath).fileName().toStdString() << endl;
     ui->previewCategoryAddComboBox->clear();
     ui->previewCategoryAddComboBox->addItem(QIcon(categoryIconFilePath), ui->categoryNameAddLineEdit->text());

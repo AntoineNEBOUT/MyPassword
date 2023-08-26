@@ -3,6 +3,7 @@
 #include "addremoveform.h"
 #include "chiffrage.h"
 #include "keydialog.h"
+#include "importform.h"
 
 #include <QClipboard>
 #include <fstream>
@@ -13,6 +14,8 @@
 #include <QProcess>
 #include <QMessageBox>
 #include <QFileInfo>
+#include <QFileDialog>
+#include <QDirIterator>
 
 using namespace std;
 
@@ -22,16 +25,19 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    this->setWindowIcon(QIcon(QCoreApplication::applicationDirPath() + "/Icons/MyPasswordIcon"));
+    this->setWindowIcon(QIcon(QCoreApplication::applicationDirPath() + "/Icons/MyPasswordIcon.png"));
     ui->actionAjouter->setIcon(QIcon(QCoreApplication::applicationDirPath() + "/Icons/editIcon.png"));
     ui->actionRestart->setIcon(QIcon(QCoreApplication::applicationDirPath() + "/Icons/restartIcon.png"));
     ui->action_propos->setIcon(QIcon(QCoreApplication::applicationDirPath() + "/Icons/MyPasswordIcon.png"));
     ui->action_propos_de_Qt->setIcon(QIcon(QCoreApplication::applicationDirPath() + "/Icons/qt.png"));
+    ui->actionQuit->setIcon(QIcon(QCoreApplication::applicationDirPath() + "/Icons/quit.png"));
+    ui->actionImport->setIcon(QIcon(QCoreApplication::applicationDirPath() + "/Icons/import.png"));
+    ui->actionExport->setIcon(QIcon(QCoreApplication::applicationDirPath() + "/Icons/export.png"));
 
     ui->categoryImageLabel->setVisible(false);
 
     y = new KeyDialog();
-    y->setWindowIcon(QIcon(QCoreApplication::applicationDirPath() + "/Icons/MyPasswordIcon"));
+    y->setWindowIcon(QIcon(QCoreApplication::applicationDirPath() + "/Icons/MyPasswordIcon.png"));
 
     QFileInfo checkFile(QCoreApplication::applicationDirPath() + "/mdp");
     if(checkFile.exists() && checkFile.isFile())
@@ -369,10 +375,14 @@ void MainWindow::on_actionAjouter_triggered()
 
 void MainWindow::on_actionRestart_triggered()
 {
+    restart();
+}
+
+void MainWindow::restart()
+{
     qApp->quit();
     QProcess::startDetached(qApp->arguments()[0], qApp->arguments());
 }
-
 
 void MainWindow::on_action_propos_de_Qt_triggered()
 {
@@ -384,5 +394,44 @@ void MainWindow::on_action_propos_triggered()
 {
     QMessageBox::about(this, "About", "<p>This software was developed by Antoine NEBOUT with the open-source version of Qt 6.4.2.<br>It is an encrypted password manager."
                             "<br>This project is available on <a href=https://github.com/AntoineNEBOUT/MyPassword>GitHub</a><p>");
+}
+
+
+void MainWindow::on_actionQuit_triggered()
+{
+    QCoreApplication::quit();
+}
+
+
+void MainWindow::on_actionExport_triggered()
+{
+    QString exportFolderPath = QFileDialog::getExistingDirectory(this, "Export destination", "C:");
+    QDir *exportFolder = new QDir();
+    exportFolder->mkdir(exportFolderPath + "/MyPasswordExport");
+
+    QFile::copy(QCoreApplication::applicationDirPath() + "/categories.txt", exportFolderPath + "/MyPasswordExport/categories.txt");
+
+    QDirIterator iconDirIterator(QCoreApplication::applicationDirPath() + "/CategoriesIcons", QDirIterator::Subdirectories);
+    while(iconDirIterator.hasNext())
+    {
+        QString temp = iconDirIterator.next();
+        if(QFileInfo(temp).fileName() != "." && QFileInfo(temp).fileName() != "..")
+        {
+            QFile::copy(temp, exportFolderPath + "/MyPasswordExport/" + QFileInfo(temp).fileName());
+        }
+    }
+
+    QMessageBox::information(this, "Export succesful", "Your password has been exported!");
+}
+
+
+void MainWindow::on_actionImport_triggered()
+{
+    QString importFolderPath = QFileDialog::getExistingDirectory(this, "Import folder", "C:");
+
+    ImportForm *y = new ImportForm(NULL, &importFolderPath);
+    y->setWindowTitle("Import mode");
+    y->setWindowIcon(QIcon(QCoreApplication::applicationDirPath() + "/Icons/MyPasswordIcon.png"));
+    y->show();
 }
 

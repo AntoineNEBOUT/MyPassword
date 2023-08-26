@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>importForm</class>
+ <widget class="QWidget" name="importForm">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>267</width>
+    <height>229</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>230</width>
+    <height>229</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>267</width>
+    <height>229</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QRadioButton" name="addRadioButton">
+       <property name="text">
+        <string>Add to others</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="addToolButton">
+       <property name="toolTip">
+        <string>More information</string>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_6">
+     <item>
+      <widget class="QRadioButton" name="replaceRadioButton">
+       <property name="text">
+        <string>Replace and delete others </string>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="replaceToolButton">
+       <property name="toolTip">
+        <string>More information</string>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QLineEdit" name="keyOfCurrentCategoriesLineEdit">
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
+       </property>
+       <property name="placeholderText">
+        <string>Key of the current categories</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="keyOfCurrentCategoriesCheckLabel">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="QLineEdit" name="keyOfImportCategoriesLineEdit">
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
+       </property>
+       <property name="placeholderText">
+        <string>Key of the imported categories</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="keyOfImportedCategoriesCheckLabel">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <item>
+      <widget class="QLineEdit" name="newKeyOfCategoriesLineEdit">
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
+       </property>
+       <property name="placeholderText">
+        <string>New key</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="newKeyCheckLabel">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_5">
+     <item>
+      <widget class="QLineEdit" name="validateNewKeyOfCategoriesLineEdit">
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
+       </property>
+       <property name="placeholderText">
+        <string>Validate new key</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="validateNewKeyCheckLabel">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="acceptButtonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

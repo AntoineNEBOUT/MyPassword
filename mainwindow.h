@@ -22,6 +22,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void restart();
 
 private slots:
     void on_buttonCopyUserName_clicked();
@@ -83,6 +84,12 @@ private slots:
     void launch();
     void setKey();
     void cancelKey();
+
+    void on_actionQuit_triggered();
+
+    void on_actionExport_triggered();
+
+    void on_actionImport_triggered();
 
 private:
     Ui::MainWindow *ui;

@@ -622,6 +622,16 @@
     <addaction name="action_propos"/>
     <addaction name="action_propos_de_Qt"/>
    </widget>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionImport"/>
+    <addaction name="actionExport"/>
+    <addaction name="separator"/>
+    <addaction name="actionQuit"/>
+   </widget>
+   <addaction name="menuFile"/>
    <addaction name="menu_propos"/>
   </widget>
   <action name="actionAjouter">
@@ -648,6 +658,21 @@
   <action name="action_propos_de_Qt">
    <property name="text">
     <string>About Qt</string>
+   </property>
+  </action>
+  <action name="actionImport">
+   <property name="text">
+    <string>Import</string>
+   </property>
+  </action>
+  <action name="actionExport">
+   <property name="text">
+    <string>Export</string>
+   </property>
+  </action>
+  <action name="actionQuit">
+   <property name="text">
+    <string>Quit</string>
    </property>
   </action>
  </widget>

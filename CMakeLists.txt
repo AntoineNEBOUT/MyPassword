@@ -24,6 +24,7 @@ set(PROJECT_SOURCES
         fileclass.h
         addremoveform.h addremoveform.cpp addremoveform.ui
         keydialog.h keydialog.cpp keydialog.ui
+        importform.h importform.cpp importform.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
