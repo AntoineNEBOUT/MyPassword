@@ -39,8 +39,9 @@ MainWindow::MainWindow(QWidget *parent)
     y = new KeyDialog();
     y->setWindowIcon(QIcon(QCoreApplication::applicationDirPath() + "/Icons/MyPasswordIcon.png"));
 
-    QFileInfo checkFile(QCoreApplication::applicationDirPath() + "/mdp");
-    if(checkFile.exists() && checkFile.isFile())
+    QFileInfo checkFileMdp(QCoreApplication::applicationDirPath() + "/mdp");
+
+    if(checkFileMdp.exists() && checkFileMdp.isFile())
     {
         y->setWindowTitle("Decryption");
         connect(y, 	SIGNAL(accepted()), SLOT(launch()));

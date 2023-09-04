@@ -347,4 +347,3 @@ void ImportForm::on_acceptButtonBox_accepted()
         }
     }
 }
-

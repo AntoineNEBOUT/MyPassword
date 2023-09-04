@@ -214,6 +214,12 @@ void AddRemoveForm::on_validateCategoryAddPushButton_clicked()
         }
     }
 
+    QDir iconDirectory;
+    if(!iconDirectory.exists(QCoreApplication::applicationDirPath() + "/CategoriesIcons"))
+    {
+        iconDirectory.mkdir(QCoreApplication::applicationDirPath() + "/CategoriesIcons");
+    }
+
     QFile::copy(categoryIconFilePath, QCoreApplication::applicationDirPath() + "/CategoriesIcons/" + QFileInfo(categoryIconFilePath).fileName());
 
     ofstream monFlux(path.c_str());
